@@ -10,7 +10,7 @@ export const validator = (name, last, email, service_type, checkbox) => {
         errs.push('Service Type can\'t be empty, pick one')
     }
     else if (checkbox === false){
-        errs.push('Check terms of service for THE NETWORK and the Privacy Policy to indicate that you have read and agreed')
+        errs.push('Read and check if you agree with the terms of service for THE NETWORK and the Privacy Policy')
     }
     return errs;
 }

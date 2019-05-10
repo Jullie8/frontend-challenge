@@ -80,7 +80,11 @@ class AssistanceReqFormContainer extends React.Component {
     render(){
         return(
             <div className="container">
-                <div> I am a div of errors the user made I may have an error component</div>
+                <div>
+                {this.state.errs.map( (error, i) => {
+                    return (<li key={i+1}> {error} </li>)
+                })}
+                </div>
                 <form className="form-horizontal" onSubmit={this.handleSubmitNewAssistanceRequestForm}>
                 <h1 className="assist-req-form">New Assistance Request </h1>
                 <hr />
@@ -93,7 +97,7 @@ class AssistanceReqFormContainer extends React.Component {
                     placeholder={ "First Name" }
                     handleInputChange={this.handleInputChange}
                 />
-                <span className="required-label">required </span>
+                <span className="required-label">required </span>   
                 { /*Input for contact last_name */}
                 <Input
                     type={'text'}
