@@ -17,9 +17,10 @@ class AssistanceReqFormContainer extends React.Component {
         },
         service_type:'',
         serviceTypesArr:[],
-        description:'',
+        description:' ',
         isTermsOfServiceChecked:false,
-        errs:[]
+        errs:[],
+        disabled:''
     }
     componentDidMount(){
         fetch('http://localhost:49567/api/service-types')
@@ -72,17 +73,34 @@ class AssistanceReqFormContainer extends React.Component {
                 }
             }) 
         })
-        .then(res => res.json())
+        .then(res => {
+            if (res.status === 201) {
+                console.log('happy')
+                return res.json()
+            } 
+            //w/o this it will crash on err b/c it will not be able to read alert.message
+            let error = new Error("Server Error")
+            throw error
+            
+        })
         .then((data)=>{
             console.log(data)
+            this.setState({
+                disabled:"disable"
+            }, ()=>{
+                alert(data.message)
+            })
+        })
+        .catch(error => {
+            console.log(error)
         })
     }
     render(){
         return(
             <div className="container">
                 <div>
-                {this.state.errs.map( (error, i) => {
-                    return (<li key={i+1}> {error} </li>)
+                {this.state.errs.map((error, i) => {
+                    return (<p key={i}> {error} </p>);
                 })}
                 </div>
                 <form className="form-horizontal" onSubmit={this.handleSubmitNewAssistanceRequestForm}>
