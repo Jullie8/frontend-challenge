@@ -6,6 +6,7 @@ const Button = (props) => {
     id={props.id}
     className={props.styles}
     type={props.type} 
+    disabled={props.disabled}
     >
     {props.value}
     </button>

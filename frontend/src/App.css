@@ -13,14 +13,17 @@ body{
 }
 
 #input{
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .assistant-req-checkbox{
   text-align: initial;
 }
-
+.required-label{
+  margin-left:87%;
+  color:red;
+}
 #textbox{
   margin-top: 20px;
   margin-bottom: 20px;

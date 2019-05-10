@@ -5,6 +5,7 @@ const Input = (props) => {
     <input
         id={"input"}
         className="form-control "
+        required={props.required}
         type={ props.type }
         name={ props.name }
         value={ props.value }
