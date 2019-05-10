@@ -2,6 +2,14 @@
 
 A single page application created with React and a fake-api executed from docker. The Assistance Request App was built as part of a code challenge.
 
+## Table of Contents
+
+* [Features](#features)
+* [Built With](#built-with)
+* [Installation](#installation)
+* [Future Implementations](#future-implementations)
+* [Acknowledgements](#acknowledgements)
+
 ## Features
 
 * Parts of this application can be used elsewhere as part of larger application.
