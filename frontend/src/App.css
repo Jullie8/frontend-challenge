@@ -21,7 +21,7 @@ body{
   text-align: initial;
 }
 .required-label{
-  margin-left:87%;
+  margin-left:90%;
   color:red;
 }
 #textbox{
@@ -30,7 +30,7 @@ body{
 }
 
 #submit-button{
-  margin-left:78%;
+  margin-left:80%;
   margin-top:2.8%
 }
 

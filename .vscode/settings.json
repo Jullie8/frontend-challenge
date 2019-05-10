@@ -5,7 +5,8 @@
         "crossorigin",
         "first",
         "input",
-        "name"
+        "name",
+        "textbox"
     ],
     "cSpell.words": [
         "first",
