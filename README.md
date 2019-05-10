@@ -36,3 +36,39 @@ The instructions below will get you a copy of the project running on your local 
 
 * Install Docker
 * Install node
+
+### Clone Repository
+
+Open terminal
+
+``` javaScript
+Run git clone <repository url>
+```
+
+Navigate into the directory where cloned project was saved and open project folder.
+For example, see example below:
+
+``` javaScript
+cd Desktop
+cd UniteUs
+ls (typing ls shows all the folders this project contains)
+```
+
+Fake API with instructions was provided ensure to set up to see app's full functionalities.
+
+### Client Installation
+
+In the same terminal window navigate into frontend directory
+
+``` javaScript
+Run npm install or yarn install
+Run npm start or yarn start
+```
+
+## Future Implementations
+
+* Include tests
+
+## Acknowledgements
+
+* Thank you Unite Us for this opportunity and for an inspiring mission.
