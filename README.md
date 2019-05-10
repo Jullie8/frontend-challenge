@@ -54,7 +54,8 @@ Run git clone <repository url>
 ```
 
 Navigate into the directory where cloned project was saved and open project folder.
-For example, see example below:
+
+See example below:
 
 ``` javaScript
 cd Desktop
@@ -62,7 +63,7 @@ cd UniteUs
 ls (typing ls shows all the folders this project contains)
 ```
 
-Fake API with instructions was provided ensure to set up to see app's full functionalities.
+Fake API with instructions was provided. To see app's full functionalities run Fake API
 
 ### Client Installation
 
