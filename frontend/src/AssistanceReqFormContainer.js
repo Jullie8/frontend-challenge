@@ -86,7 +86,8 @@ class AssistanceReqFormContainer extends React.Component {
         .then((data)=>{
             console.log(data)
             this.setState({
-                disabled:"disable"
+                disabled:"disable",
+                errs: []
             }, ()=>{
                 alert(data.message)
             })
@@ -99,9 +100,10 @@ class AssistanceReqFormContainer extends React.Component {
         return(
             <div className="container">
                 <div>
-                {this.state.errs.map((error, i) => {
-                    return (<p key={i}> {error} </p>);
-                })}
+                {this.state.errs.length > 0 ? this.state.errs.map((error, i) => {
+                    return (<div className="alert alert-warning" key={i}> {error} </div>);
+                })
+                : null}
                 </div>
                 <form className="form-horizontal" onSubmit={this.handleSubmitNewAssistanceRequestForm}>
                 <h1 className="assist-req-form">New Assistance Request </h1>
