@@ -4,7 +4,7 @@ A single page application created with React and a fake-api executed from docker
 
 ## Features
 
-* Parts of this application can be used elsewhere in a larger application
+* Parts of this application can be used elsewhere as part of larger application.
 
 * App contains Field validations. When something isn't right warning div appears
 
