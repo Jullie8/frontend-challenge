@@ -75,7 +75,6 @@ class AssistanceReqFormContainer extends React.Component {
         })
         .then(res => {
             if (res.status === 201) {
-                console.log('happy')
                 return res.json()
             } 
             //w/o this it will crash on err b/c it will not be able to read alert.message
@@ -84,7 +83,6 @@ class AssistanceReqFormContainer extends React.Component {
             
         })
         .then((data)=>{
-            console.log(data)
             this.setState({
                 disabled:"disable",
                 errs: []
