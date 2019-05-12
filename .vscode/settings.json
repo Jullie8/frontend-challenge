@@ -1,16 +1,20 @@
 {
     "cSpell.ignoreWords": [
+        "browserslist",
         "component",
         "container",
         "crossorigin",
+        "div",
         "first",
         "input",
         "name",
+        "production",
         "textbox"
     ],
     "cSpell.words": [
         "first",
         "input",
-        "name"
+        "name",
+        "uniteus"
     ]
 }

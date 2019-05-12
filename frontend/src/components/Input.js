@@ -1,18 +1,27 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Input = (props) => {
-  return (
-    <input
-        id={"input"}
-        className="form-control "
-        required={props.required}
-        type={ props.type }
-        name={ props.name }
-        value={ props.value }
-        placeholder={ props.placeholder }
-        onChange={props.handleInputChange }
-    />
-    );
-}
+const Input = ({
+  required, type, name, value, placeholder, handleInputChange,
+}) => (<input id="input" className="form-control " required={required} type={type} name={name} value={value} placeholder={placeholder} onChange={handleInputChange} />);
+
+Input.defaultProps = {
+  type: '',
+  required: false,
+  name: '',
+  value: '',
+  placeholder: '',
+  handleInputChange: () => { },
+};
+
+Input.propTypes = {
+  type: PropTypes.string,
+  required: PropTypes.bool,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  placeholder: PropTypes.string,
+  handleInputChange: PropTypes.func,
+};
 
 export default Input;

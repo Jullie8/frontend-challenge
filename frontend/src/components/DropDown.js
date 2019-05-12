@@ -1,27 +1,45 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const DropDown = (props) => {
-    return(
-      <select 
-        className={'form-control'}
-        name={ props.name } 
-        value={ props.value } 
-        onChange={props.handleSelect}
+const DropDown = ({
+  name, options, value, placeholder, handleSelect,
+}) => (
+  <select
+    className="form-control"
+    name={name}
+    value={value}
+    onChange={handleSelect}
+  >
+    <option value="" disabled>
+      {' '}
+      {placeholder}
+      {' '}
+    </option>
+    { options.map(option => (
+      <option
+        key={option.id}
+        value={option.display_name}
       >
-        <option value="" disabled> {props.placeholder} </option>
-        { props.options.map((option)=>{
-            return (
-                <option 
-                key={ option.id }
-                value={ option.display_name }
-                >
-                { option.display_name }
-                </option>
-            );
-        })} 
-      </select>
-    );
-}
+        { option.display_name }
+      </option>
+    ))}
+  </select>
+);
 
+DropDown.defaultProps = {
+  name: '',
+  options: '',
+  value: '',
+  placeholder: '',
+  handleSelect: () => { },
+};
+
+DropDown.propTypes = {
+  name: PropTypes.string,
+  options: PropTypes.node,
+  value: PropTypes.string,
+  placeholder: PropTypes.string,
+  handleSelect: PropTypes.func,
+};
 export default DropDown;
-    

@@ -9,7 +9,7 @@ import Button from './components/Button';
 import { validator } from './helpers/validator'
 
 class AssistanceReqFormContainer extends React.Component {
-    state ={
+    state = {
         contact:{
             first_name:'',
             last_name:'',
@@ -115,7 +115,7 @@ class AssistanceReqFormContainer extends React.Component {
                     placeholder={ "First Name" }
                     handleInputChange={this.handleInputChange}
                 />
-                <span className="required-label">required </span>   
+                    <span className="pull-right required-label">required </span>   
                 { /*Input for contact last_name */}
                 <Input
                     type={'text'}
@@ -125,7 +125,7 @@ class AssistanceReqFormContainer extends React.Component {
                     placeholder={"Last Name"}
                     handleInputChange={this.handleInputChange}
                 />
-                <span className="required-label">required </span>
+                    <span className="pull-right required-label">required </span>
                 { /*Input for contact email */}
                 <Input
                     type={ 'email' }
@@ -135,7 +135,7 @@ class AssistanceReqFormContainer extends React.Component {
                     placeholder={"Email Address"}
                     handleInputChange={this.handleInputChange}
                 />
-                <span className="required-label">required </span>
+                    <span className="pull-right required-label">required </span>
                 {/* Dropdown select options for service Types */}
                 <DropDown 
                     name={'service_type'}
@@ -144,7 +144,7 @@ class AssistanceReqFormContainer extends React.Component {
                     placeholder={'Select Service Type'}
                     handleSelect={this.handleSelect}
                 /> 
-                <span className="required-label">required </span>
+                    <span className='pull-right required-label'>required </span>
                 {/* TextBox for description textarea */}
                 <TextBox
                     rows={3}
@@ -164,8 +164,7 @@ class AssistanceReqFormContainer extends React.Component {
                 {/* Submit Button to get Assistance */}
                 <Button
                     id={"submit-button"}
-                    styles={"btn btn-primary"}
-                    type={"submit"}
+                    styles={"btn btn-primary pull-right"}
                     value={"Get Assistance"}
                     disabled={this.state.disabled}
                 />
