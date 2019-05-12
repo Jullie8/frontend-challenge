@@ -6,7 +6,7 @@ import TextBox from './components/TextBox';
 import CheckBox from './components/CheckBox';
 import Button from './components/Button';
 //helpers 
-import { validator } from './helpers/validator'
+import { validator } from './helpers/validator';
 
 class AssistanceReqFormContainer extends React.Component {
     state = {

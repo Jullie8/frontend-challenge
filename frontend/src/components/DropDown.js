@@ -29,7 +29,7 @@ const DropDown = ({
 
 DropDown.defaultProps = {
   name: '',
-  options: '',
+  options: [],
   value: '',
   placeholder: '',
   handleSelect: () => { },
@@ -37,7 +37,10 @@ DropDown.defaultProps = {
 
 DropDown.propTypes = {
   name: PropTypes.string,
-  options: PropTypes.node,
+  options: PropTypes.arrayOf(PropTypes.shape({
+    display_name: PropTypes.string,
+    id: PropTypes.string,
+  })),
   value: PropTypes.string,
   placeholder: PropTypes.string,
   handleSelect: PropTypes.func,
