@@ -5,7 +5,7 @@ import React from 'react';
 const Button = ({
   id, styles, disabled, value,
 }) => (
-    <button id={id} className={styles} type="submit" disabled={disabled}>
+  <button id={id} className={styles} type="submit" disabled={disabled}>
     {value}
   </button>
 );
