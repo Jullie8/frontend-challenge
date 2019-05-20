@@ -15,7 +15,7 @@ CheckBox.defaultProps = {
   name: '',
   type: '',
   checked: false,
-  handleCheckBoxChange: () => { }, // empty fun that returns undefined,
+  handleCheckBoxChange: () => { }, // empty func that returns undefined,
   children: '',
 };
 

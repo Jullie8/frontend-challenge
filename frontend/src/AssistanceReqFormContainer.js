@@ -58,41 +58,46 @@ class AssistanceReqFormContainer extends React.Component {
             })
             return;
         }
-        fetch('http://localhost:49567/api/assistance-requests', {
-            method:'POST',
-            cache: 'no-cache',
-            headers:{
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body:JSON.stringify({
-                assistance_request:{
-                    contact:this.state.contact,
-                    service_type:this.state.service_type,
-                    description:this.state.description
-                }
-            }) 
+        fetch("http://localhost:49567/api/assistance-requests", {
+          method: "POST",
+          cache: "no-cache",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            assistance_request: {
+              contact: this.state.contact,
+              service_type: this.state.service_type,
+              description: this.state.description
+            }
+          })
         })
-        .then(res => {
+          .then(res => {
             if (res.status === 201) {
-                return res.json()
+              return res.json();
             } 
-            //w/o this it will crash on err b/c it will not be able to read alert.message
-            let error = new Error("Server Error")
-            throw error
-            
-        })
-        .then((data)=>{
-            this.setState({
+            let error = new Error(
+              `Request rejected with status ${res.status}`
+            );
+            //throw error at this point will break the pg and show the msg above but catching the error like below will log to console
+            if (res.status === 401) alert(`${res.statusText}: Sorry, you are not authorized to make this request.`)
+            else if (res.status === 500) alert(`${res.statusText}: Oh no! Something completely unexpected happened!`)
+            else if (res.status === 503) alert(`${res.statusText}: We're down!!!!!! Come back later.....(please)`)
+            throw error;
+          })
+          .then(data => {
+            this.setState(
+              {
                 disabled:"disable",
                 errs: []
-            }, ()=>{
-                alert(data.message)
-            })
-        })
-        .catch(error => {
-            console.log(error)
-        })
+              },
+              () => {
+                alert(data.message, 'Your assistance request has been successfully submitted.')
+              });
+          }).catch(()=>{
+            console.error()
+          })
     }
     render(){
         return(
